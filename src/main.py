@@ -30,9 +30,16 @@ class ContractAnalyzer:
         self.api_key = api_key or os.getenv('OPENAI_API_KEY')
         if not self.api_key:
             raise ValueError('OPENAI_API_KEY environment variable not set')
-        
+
+        # Remove invalid OPENAI_ORG_ID if it exists (common mistake in .env files)
+        org_id = os.getenv('OPENAI_ORG_ID')
+        if org_id and org_id.lower() in ['personal', 'your_org_id_here', 'none']:
+            logger.warning(f'Ignoring invalid OPENAI_ORG_ID: {org_id}')
+            if 'OPENAI_ORG_ID' in os.environ:
+                del os.environ['OPENAI_ORG_ID']
+
         self.client = OpenAI(api_key=self.api_key)
-        self.model = 'gpt-4-turbo'
+        self.model = os.getenv('MODEL_NAME', 'gpt-3.5-turbo')
         logger.info(f'ContractAnalyzer initialized with model: {self.model}')
 
     def analyze_contract(self, contract_text: str) -> dict:
@@ -78,10 +85,18 @@ Provide structured analysis including:
                 }
             }
         except Exception as e:
-            logger.error(f'Error during contract analysis: {str(e)}')
+            error_msg = str(e)
+            logger.error(f'Error during contract analysis: {error_msg}')
+
+            # Add helpful context for common errors
+            if "403" in error_msg or "PermissionDenied" in error_msg:
+                error_msg += " - Check your API key validity and billing status at https://platform.openai.com/account/billing"
+            elif "401" in error_msg:
+                error_msg += " - Invalid API key. Please check OPENAI_API_KEY in .env"
+
             return {
                 "status": "error",
-                "error": str(e)
+                "error": error_msg
             }
 
     def assess_risk(self, contract_text: str) -> dict:
@@ -113,8 +128,16 @@ Identify critical risk areas that require legal review.
                 "assessment": assessment
             }
         except Exception as e:
-            logger.error(f'Error during risk assessment: {str(e)}')
-            return {"status": "error", "error": str(e)}
+            error_msg = str(e)
+            logger.error(f'Error during risk assessment: {error_msg}')
+
+            # Add helpful context for common errors
+            if "403" in error_msg or "PermissionDenied" in error_msg:
+                error_msg += " - Check your API key validity and billing status at https://platform.openai.com/account/billing"
+            elif "401" in error_msg:
+                error_msg += " - Invalid API key. Please check OPENAI_API_KEY in .env"
+
+            return {"status": "error", "error": error_msg}
 
 
 def main():
