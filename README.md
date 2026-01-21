@@ -159,6 +159,32 @@ The workflow runs automatically on schedule or manual trigger:
 2. **Process**: Analyzes all contracts in `/contracts` directory
 3. **Output**: Uploads results as artifacts, commits to repo
 4. **Storage**: Results retained for 90 days
+5. 
+
+### RAG Demo Execution
+
+Run the included RAG demo to see the system in action with sample contracts:
+
+```bash
+# The demo processes sample contracts in sample_contracts/ directory
+python demo_rag_execution.py
+```
+
+This will:
+1. Load sample contracts from `sample_contracts/` folder
+2. Initialize RAG engine with vector database
+3. Process contracts through the analysis pipeline
+4. Generate JSON results in `rag_results/` folder
+5. Create markdown visualizations in `rag_visualizations/` folder
+
+**Demo Output Files:**
+- `rag_results/analysis_results.json` - Structured analysis results
+- `rag_results/execution_summary.txt` - Execution summary with timings
+- `rag_visualizations/analysis_report.md` - Visual report with markdown formatting
+
+**GitHub Actions:** The demo runs automatically on workflow trigger and uploads results as artifacts for inspection.
+
+
 
 ## 📊 Performance Metrics
 
