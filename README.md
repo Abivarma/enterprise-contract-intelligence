@@ -243,8 +243,8 @@ This project is licensed under the MIT License - see LICENSE file for details.
 
 For questions or support:
 - GitHub Issues: [Project Issues](https://github.com/Abivarma/enterprise-contract-intelligence/issues)
-- Email: abivarma@example.com
-- LinkedIn: [Profile](https://linkedin.com/in/abivarma)
+- Email: abivarmasabari@gmail.com
+- LinkedIn: https://linkedin.com/in/abivarma
 
 ---
 
