@@ -128,7 +128,6 @@ Create a `.env` file based on `.env.example`:
 
 ```env
 OPENAI_API_KEY=your_key_here
-OPENAI_ORG_ID=your_org_id
 MODEL_NAME=gpt-4-turbo
 TEMPERATURE=0.3
 MAX_TOKENS=2000
