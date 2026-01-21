@@ -1,0 +1,49 @@
+SERVICE LEVEL AGREEMENT (SLA)
+
+Effective Date: February 1, 2024
+Between: Tech Solutions Ltd. ("Service Provider") and Enterprise Corp. ("Client")
+
+1. SERVICE DESCRIPTION
+Service Provider will provide cloud infrastructure services including:
+- 24/7 server monitoring and support
+- Regular backups and disaster recovery
+- Security patches and updates
+- Performance optimization
+
+2. SERVICE AVAILABILITY
+2.1 Uptime Guarantee: Service Provider guarantees 99.9% uptime excluding scheduled maintenance.
+2.2 Scheduled Maintenance: Up to 4 hours per month during off-peak hours (2 AM - 6 AM UTC).
+2.3 Uptime Measurement: Measured on a monthly basis.
+
+3. RESPONSE TIME COMMITITIES
+3.1 Critical Issues: Response within 30 minutes, resolution target 4 hours
+3.2 High Priority: Response within 2 hours, resolution target 24 hours
+3.3 Medium Priority: Response within 8 hours, resolution target 48 hours
+3.4 Low Priority: Response within 24 hours, resolution target 5 business days
+
+4. SERVICE CREDITS
+If Service Provider fails to meet SLA targets:
+- 95-99.9% availability: 5% monthly fee credit
+- 90-95% availability: 10% monthly fee credit
+- Below 90% availability: 25% monthly fee credit or termination option
+
+5. EXCLUSIONS
+Downtime caused by:
+- Client's network or hardware failures
+- Denial of service attacks
+- Force majeure events
+- Client-caused misconfigurations
+
+6. MONITORING AND REPORTING
+6.1 Service Provider will maintain real-time monitoring dashboards accessible to Client.
+6.2 Monthly performance reports will be provided by the 5th of each month.
+6.3 Quarterly review meetings will be scheduled to discuss performance metrics.
+
+7. SUPPORT ESCALATION
+- Level 1: Standard support team
+- Level 2: Senior technical team
+- Level 3: Engineering team lead
+- Level 4: Vice President of Operations
+
+8. TERM AND TERMINATION
+This SLA remains in effect for the duration of the service contract. Either party may terminate with 30 days notice.
