@@ -1,4 +1,4 @@
-name: Enterprise Contract Analysis Pipeline
+                    name: Enterprise Contract Analysis Pipeline
 
 on:
   push:
@@ -26,7 +26,7 @@ jobs:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: python src/main.py
     - name: Upload Results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: contract-results
         path: results/
