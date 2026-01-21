@@ -1,0 +1,41 @@
+name: Enterprise Contract Analysis Pipeline
+
+on:
+  push:
+    paths:
+      - 'contracts/**'
+      - 'src/**'
+  schedule:
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+jobs:
+  contract_analysis:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+    - name: Run Contract Analysis
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: python src/main.py
+    - name: Upload Results
+      uses: actions/upload-artifact@v3
+      with:
+        name: contract-results
+        path: results/
+        retention-days: 90
+    - name: Commit Results
+      if: always()
+      run: |
+        git config --global user.email "bot@github.com"
+        git config --global user.name "Analysis Bot"
+        git add results/ || true
+        git commit -m "Auto: Contract analysis $(date)" || true
+        git push || true
