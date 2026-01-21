@@ -1,0 +1,39 @@
+MUTUAL NON-DISCLOSURE AGREEMENT (NDA)
+
+Effective Date: January 10, 2024
+Between: TechVenture Partners LLC ("Disclosing Party") and Innovation Labs Inc. ("Receiving Party")
+
+1. PURPOSE
+This NDA is entered into to facilitate discussion and evaluation of potential business opportunities between the parties.
+
+2. CONFIDENTIAL INFORMATION
+Confidential Information includes but is not limited to:
+- Business plans and strategies
+- Financial information and projections
+- Technical data and source code
+- Customer lists and contact information
+- Proprietary processes and methodologies
+- Product roadmaps and development plans
+- Research and development work
+
+3. OBLIGATIONS
+3.1 The Receiving Party agrees to maintain strict confidentiality of all Confidential Information and limit disclosure to employees with a need to know.
+3.2 The Receiving Party shall not disclose Confidential Information to third parties without written consent.
+
+4. EXCEPTIONS
+Confidential Information excludes information that:
+- Is or becomes publicly available through no breach
+- Is already in possession of Receiving Party prior to disclosure
+- Is independently developed without use of Confidential Information
+
+5. DURATION
+The obligations under this NDA shall remain in effect for 3 years from the Effective Date.
+
+6. RETURN OF INFORMATION
+Upon request or termination, Receiving Party shall return or certify destruction of all Confidential Information.
+
+7. NO LICENSE GRANTED
+This NDA does not grant any license, right, or interest in any Confidential Information.
+
+8. GOVERNING LAW
+This Agreement shall be governed by the laws of New York.
