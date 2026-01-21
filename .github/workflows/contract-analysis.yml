@@ -44,3 +44,23 @@ jobs:
           git add results/ || true
           git commit -m "Auto: Contract analysis $(date)" || true
           git push || true
+
+                - name: Run RAG Demo
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python demo_rag_execution.py
+
+      - name: Upload RAG Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: rag-results
+          path: rag_results/
+          retention-days: 30
+
+      - name: Upload RAG Visualizations
+        uses: actions/upload-artifact@v4
+        with:
+          name: rag-visualizations
+          path: rag_visualizations/
+          retention-days: 30
